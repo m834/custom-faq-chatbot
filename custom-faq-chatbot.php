@@ -1,4 +1,12 @@
 <?php
+/**
+ * Plugin Name: Custom FAQ Chatbot
+ * Plugin URI:  https://example.com/
+ * Description: Lightweight FAQ Chatbot plugin that adds a popup and fullscreen FAQ chatbot.
+ * Version:     1.0.0
+ * Author:      m834
+ * Text Domain: custom-faq-chatbot
+ */
 
 if (!defined('ABSPATH')) {
     exit;
@@ -103,9 +111,7 @@ class Custom_FAQ_Chatbot {
         ?>
         <!-- Popup Chat Button -->
         <div id="cfaq-popup-button" class="cfaq-popup-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <img src="<?php echo CFAQ_PLUGIN_URL; ?>assets/icon.png" alt="Chat" width="24" height="24" />
         </div>
         
         <!-- Popup Chat Window -->
@@ -116,9 +122,7 @@ class Custom_FAQ_Chatbot {
                     <p>Ask me anything</p>
                 </div>
                 <button id="cfaq-popup-close" class="cfaq-close-button">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+                    <img src="<?php echo CFAQ_PLUGIN_URL; ?>assets/logo.png" alt="Close" width="20" height="20" />
                 </button>
             </div>
             <div class="cfaq-popup-messages" id="cfaq-popup-messages">

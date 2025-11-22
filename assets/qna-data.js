@@ -1,3 +1,4 @@
+
 const cfaqData = [
     // ==========================================
     // GREETINGS & BASIC INTERACTIONS
@@ -480,23 +481,95 @@ const cfaqData = [
     },
 
     // ==========================================
-    // PROGRAM TEAM & STAFF
+    // PROGRAM TEAM & STAFF - COMPREHENSIVE
     // ==========================================
     {
-        keywords: ["program director", "director", "who runs program"],
-        answer: "DigiBizz is led by a dedicated Program Director who oversees all operations, training centers, and strategic initiatives. The Director has successfully conducted awareness sessions across Balochistan and is committed to youth empowerment through digital skills."
+        keywords: ["program director", "director", "who runs program", "director kaun hai"],
+        answer: "The Program Director is the head of DigiBizz who oversees ALL program operations, training centers, and strategic initiatives. Responsibilities include: ✓ Overall program leadership and vision, ✓ Conducting awareness sessions across Balochistan, ✓ Coordinating with government departments, ✓ Strategic planning and expansion, ✓ Quality assurance, ✓ Stakeholder management. The Director has successfully mobilized youth across districts like Awaran, Sibi, Zhob, Loralai, Dera Bugti, Gwadar, and Turbat!"
     },
     {
-        keywords: ["master trainer", "trainer", "instructor", "teacher", "ustaz"],
-        answer: "DigiBizz has highly qualified Master Trainers and Trainers in: 🎨 Master Trainer - Graphics (Creative Design), 📱 Master Trainer - Digital Marketing, 🛒 Master Trainer - AWE (Amazon & Web). Plus multiple Trainers across centers. They are experienced professionals providing world-class training!"
+        keywords: ["admin officer", "administration officer", "admin ka kaam"],
+        answer: "The Admin Officer manages the day-to-day administrative operations of DigiBizz. Key responsibilities: ✓ Student enrollment and documentation, ✓ Managing training center logistics, ✓ Coordinating with universities and institutions, ✓ Handling official correspondence, ✓ Managing stipend disbursements, ✓ Maintaining records and databases, ✓ Supporting the Program Director in operations. They ensure smooth administrative processes!"
     },
     {
-        keywords: ["lms incharge", "lms", "learning management", "portal incharge"],
-        answer: "The LMS (Learning Management System) Incharge manages the online portal at lms.digibizz.gob.pk where you'll access: ✓ Course materials, ✓ Assignments, ✓ Progress tracking, ✓ Announcements, ✓ Grades and feedback. You'll receive login credentials after selection."
+        keywords: ["me officer", "monitoring evaluation", "m&e officer", "monitoring officer"],
+        answer: "The M&E (Monitoring & Evaluation) Officer is responsible for tracking program effectiveness and impact. Their role includes: ✓ Monitoring student progress and performance, ✓ Evaluating training quality and outcomes, ✓ Collecting and analyzing program data, ✓ Preparing impact assessment reports, ✓ Tracking attendance and completion rates, ✓ Identifying areas for improvement, ✓ Ensuring program meets objectives. They help maintain DigiBizz's high quality standards!"
     },
     {
-        keywords: ["admin officer", "administration", "me officer"],
-        answer: "The Admin Officer manages administrative operations, and the M&E (Monitoring & Evaluation) Officer tracks program performance, student progress, and impact assessment. Together, the team ensures smooth program execution and quality standards."
+        keywords: ["master trainer digital", "digital marketing trainer", "digital marketing master"],
+        answer: "The Master Trainer - Digital Marketing is an expert who leads all Digital Marketing training. Responsibilities: ✓ Teaching Content Marketing & Advertisement, ✓ Training in Social Media Marketing (Facebook, Instagram, LinkedIn), ✓ SEO (Search Engine Optimization) instruction, ✓ Email Marketing and Analytics, ✓ Google Ads & Facebook Ads training, ✓ Curriculum development, ✓ Training junior trainers, ✓ Ensuring quality standards. They are experienced professionals with real-world digital marketing expertise!"
+    },
+    {
+        keywords: ["master trainer graphics", "creative design trainer", "graphics master", "design trainer"],
+        answer: "The Master Trainer - Graphics (Creative Design) leads all Creative Design and AI training. Their expertise includes: ✓ Teaching Graphic Design fundamentals, ✓ Adobe Photoshop & Illustrator training, ✓ Logo Design & Branding, ✓ Social Media Graphics creation, ✓ Print Design (Brochures, Flyers), ✓ AI tools for design, ✓ Typography & Color Theory, ✓ Portfolio building guidance. They are industry experts who train students to become professional designers!"
+    },
+    {
+        keywords: ["master trainer awe", "amazon trainer", "ecommerce trainer", "web trainer"],
+        answer: "The Master Trainer - AWE (Amazon & Web E-commerce) is the expert for Amazon and web development training. Key areas: ✓ Amazon FBA (Fulfillment by Amazon), ✓ Product Research & Selection strategies, ✓ Listing Optimization & Keywords, ✓ Complete Dropshipping Store Setup, ✓ WordPress development, ✓ E-commerce integration, ✓ Store Management & Operations. They teach students to build profitable online businesses on Amazon marketplace!"
+    },
+    {
+        keywords: ["lms incharge", "lms manager", "learning management system", "portal manager"],
+        answer: "The LMS Incharge manages the Learning Management System (lms.digibizz.gob.pk). Their responsibilities: ✓ Managing the online learning portal, ✓ Uploading course materials and videos, ✓ Managing student accounts and access, ✓ Tracking assignment submissions, ✓ Posting announcements and updates, ✓ Managing grades and feedback, ✓ Providing technical support for portal issues, ✓ Ensuring smooth digital learning experience. They keep your online learning running smoothly!"
+    },
+    {
+        keywords: ["trainer", "trainers", "junior trainer", "assistant trainer", "teacher"],
+        answer: "DigiBizz has multiple Trainers working across different training centers. They work under Master Trainers to deliver quality education. Roles include: ✓ Conducting lectures and practical sessions, ✓ Teaching specific modules within courses, ✓ Providing one-on-one guidance to students, ✓ Grading assignments and assessments, ✓ Conducting lab sessions, ✓ Answering student queries, ✓ Supporting Master Trainers. There are 11+ trainers across DigiBizz centers ensuring personalized attention!"
+    },
+    {
+        keywords: ["team structure", "team members", "staff", "who works", "team kitni hai"],
+        answer: "DigiBizz has a comprehensive team structure: 1️⃣ Program Director (Overall Leadership), 2️⃣ Admin Officer (Administration), 3️⃣ M&E Officer (Monitoring & Evaluation), 4️⃣ Master Trainer - Digital Marketing, 5️⃣ Master Trainer - Graphics/Creative Design, 6️⃣ Master Trainer - AWE (Amazon & Web), 7️⃣ LMS Incharge (Learning Portal), 8️⃣ 11+ Trainers across centers. This dedicated team ensures world-class training and support!"
+    },
+    {
+        keywords: ["how many trainers", "trainers kitne hain", "teacher kitne"],
+        answer: "DigiBizz has 11+ trainers working across multiple training centers in Quetta and other districts. This includes: 3 Master Trainers (Digital Marketing, Graphics/Creative Design, and AWE), and 11+ regular Trainers who assist with lectures, practical sessions, and student guidance. This ensures good trainer-to-student ratio for quality education!"
+    },
+    {
+        keywords: ["trainer qualification", "trainer experience", "trainer background"],
+        answer: "All DigiBizz trainers are highly qualified professionals with: ✓ Real-world industry experience, ✓ Proven expertise in their specialization, ✓ Teaching/training experience, ✓ Up-to-date knowledge of latest trends, ✓ Practical freelancing experience, ✓ Strong communication skills. Master Trainers have extensive experience and have trained hundreds of students. They bring both theoretical knowledge and practical insights!"
+    },
+    {
+        keywords: ["meet trainers", "trainer names", "who are trainers", "trainer introduction"],
+        answer: "For privacy reasons, individual trainer names are not publicly listed. However, you'll meet your trainers during orientation after selection. They are industry professionals with proven track records in Digital Marketing, Creative Design, and Amazon E-commerce. Check DigiBizz Facebook page for trainer spotlights and success stories!"
+    },
+    {
+        keywords: ["can i choose trainer", "trainer preference", "best trainer"],
+        answer: "Trainers are assigned based on your selected course and training center. All trainers maintain high quality standards supervised by Master Trainers and the Program Director. You cannot choose specific trainers, but rest assured - all are qualified professionals committed to your success!"
+    },
+    {
+        keywords: ["trainer contact", "how to reach trainer", "trainer ka number"],
+        answer: "⚠️ IMPORTANT: Do NOT contact trainers on personal numbers! All communication must be through: ✓ Official WhatsApp groups, ✓ LMS portal messages, ✓ Classroom discussions, ✓ Scheduled office hours. Contacting trainers personally outside official channels is against program policy and can result in removal from the program!"
+    },
+    {
+        keywords: ["trainer availability", "trainer schedule", "office hours"],
+        answer: "Trainers are available during: ✓ Scheduled class hours, ✓ Designated office hours (announced in class), ✓ Through official communication channels, ✓ Via LMS portal messages. Response time varies but trainers typically respond within 24-48 hours. Respect their time and use proper channels for communication!"
+    },
+    {
+        keywords: ["guest trainers", "industry experts", "special sessions"],
+        answer: "DigiBizz occasionally invites industry experts and successful freelancers for special guest sessions. These sessions provide: ✓ Real-world insights, ✓ Industry trends, ✓ Success stories, ✓ Networking opportunities, ✓ Motivation and inspiration. Announcements are made through official channels. Attend these valuable sessions whenever offered!"
+    },
+    {
+        keywords: ["trainer feedback", "complain about trainer", "trainer issue"],
+        answer: "If you have concerns about training quality: 1️⃣ First, try to address it directly with the trainer (respectfully), 2️⃣ If unresolved, contact the Master Trainer of that course, 3️⃣ If still unresolved, contact the Program Director, 4️⃣ Use official channels - email support@digibizz.gob.pk. ⚠️ Remember: Feedback must be constructive, professional, and factual. Inappropriate feedback is not tolerated!"
+    },
+    {
+        keywords: ["training quality", "quality assurance", "standard maintenance"],
+        answer: "DigiBizz maintains high training quality through: ✓ Master Trainers supervising all training, ✓ M&E Officer monitoring performance, ✓ Regular curriculum updates, ✓ Student feedback collection, ✓ Industry-aligned content, ✓ Practical hands-on approach, ✓ Performance evaluations. The Program Director ensures all centers maintain consistent high standards!"
+    },
+    {
+        keywords: ["team support", "student support", "help available"],
+        answer: "The DigiBizz team provides comprehensive support: 📚 Trainers: Academic guidance and skill development, 💼 Admin Officer: Enrollment and documentation, 📊 M&E Officer: Progress tracking, 💻 LMS Incharge: Portal and technical support, 🎯 Program Director: Overall leadership and issue resolution. You're never alone in your learning journey!"
+    },
+    {
+        keywords: ["team location", "office team", "where is team"],
+        answer: "The core administrative team is based at: IT Training Institute, Old Pishin Stop, Near TCS Office, Model Town, Quetta (Model Town B-18, Old AG Office). Trainers are distributed across training centers: UOB, BUITEMS, IITI, Government Girls College, and other locations. Contact main office at 081-9203131."
+    },
+    {
+        keywords: ["team working hours", "office timing", "kab milein"],
+        answer: "Main office working hours are typically Monday-Friday, during regular government office hours. For exact timings and appointments, call 081-9203131 or email support@digibizz.gob.pk. It's best to call ahead before visiting to ensure staff availability!"
+    },
+    {
+        keywords: ["volunteer", "become trainer", "join team", "work with digibizz"],
+        answer: "Interested in joining the DigiBizz team? 🌟 Positions (trainers, staff) are announced when available. Requirements typically include: ✓ Relevant expertise and experience, ✓ Educational qualifications, ✓ Teaching/training experience, ✓ Commitment to youth empowerment. Keep checking digibizz.gob.pk for job announcements or email your CV to support@digibizz.gob.pk with subject 'Job Application'."
     },
 
     // ==========================================
@@ -574,4 +647,3 @@ const cfaqData = [
 
 // Fallback response when no match is found
 const cfaqFallbackResponse = "I apologize, but I don't have specific information about that question. For detailed inquiries, please contact DigiBizz directly:\n\n📞 Phone: 081-9203131\n📧 Email: support@digibizz.gob.pk\n🌐 Website: www.digibizz.gob.pk\n📍 Address: IT Training Institute, Old Pishin Stop, Near TCS Office, Model Town, Quetta\n\nYou can also visit our Facebook page 'DigiBizz Balochistan' for updates. Our team will be happy to assist you!";
-    
