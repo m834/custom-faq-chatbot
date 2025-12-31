@@ -436,3 +436,44 @@
 .cfaq-user-message .cfaq-message-content {
     color: #ffffff;
 }
+
+/* ==========================================
+   FAQ BUTTONS STYLING
+   ========================================== */
+
+.cfaq-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.cfaq-faq-btn {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 13px;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    width: 100%;
+}
+
+.cfaq-faq-btn:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+    transform: translateX(2px);
+}
+
+.cfaq-faq-btn:active {
+    transform: translateX(2px) scale(0.98);
+}
+
+.cfaq-message-content strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d3748;
+}

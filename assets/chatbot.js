@@ -9,14 +9,14 @@
     /**
      * Find the best matching answer for a user question
      * @param {string} userQuestion - The question from the user
-     * @returns {string} - The matched answer
+     * @returns {object} - Object with answer and whether it was found
      */
     function findAnswer(userQuestion) {
         const question = userQuestion.toLowerCase().trim();
         
         // If empty question, return fallback
         if (!question) {
-            return cfaqFallbackResponse;
+            return {answer: cfaqFallbackResponse, found: false};
         }
         
         let bestMatch = null;
@@ -53,7 +53,57 @@
         }
         
         // Return best match or fallback
-        return bestMatch || cfaqFallbackResponse;
+        if (bestMatch) {
+            return {answer: bestMatch, found: true};
+        } else {
+            return {answer: cfaqFallbackResponse, found: false};
+        }
+    }
+    
+    /**
+     * Save unanswered question to server
+     * @param {string} question - The unanswered question
+     */
+    function saveUnansweredQuestion(question) {
+        console.log('Attempting to save unanswered question:', question);
+        
+        // Check if cfaqAjax is available (WordPress localized script)
+        if (typeof cfaqAjax === 'undefined') {
+            console.error('AJAX configuration not found. cfaqAjax is undefined.');
+            console.log('This usually means wp_localize_script was not called properly.');
+            return;
+        }
+        
+        console.log('AJAX config found:', cfaqAjax);
+        
+        // Create form data
+        const formData = new FormData();
+        formData.append('action', 'cfaq_save_unanswered');
+        formData.append('nonce', cfaqAjax.nonce);
+        formData.append('question', question);
+        
+        console.log('Sending AJAX request to:', cfaqAjax.ajaxurl);
+        
+        // Send to server
+        fetch(cfaqAjax.ajaxurl, {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            console.log('Response status:', response.status);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log('Server response:', data);
+            if (data.success) {
+                console.log('✅ Unanswered question saved successfully:', question);
+            } else {
+                console.error('❌ Failed to save question:', data.data);
+            }
+        })
+        .catch(function(error) {
+            console.error('❌ Error saving unanswered question:', error);
+        });
     }
     
     /**
@@ -150,8 +200,17 @@
             removeTypingIndicator();
             
             // Find and add bot response
-            const answer = findAnswer(userMessage);
-            addMessage(answer, 'bot', messagesContainer);
+            const result = findAnswer(userMessage);
+            console.log('Answer result for "' + userMessage + '":', result);
+            addMessage(result.answer, 'bot', messagesContainer);
+            
+            // If no answer was found, save the question
+            if (!result.found) {
+                console.log('No answer found, saving question...');
+                saveUnansweredQuestion(userMessage);
+            } else {
+                console.log('Answer found, not saving question.');
+            }
         }, thinkingTime);
     }
     
@@ -196,6 +255,18 @@
                 const message = inputField.value;
                 handleUserMessage(message, messagesContainer, inputField);
             }
+        });
+        
+        // Handle FAQ button clicks
+        const faqButtons = popupWindow.querySelectorAll('.cfaq-faq-btn');
+        faqButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const question = this.getAttribute('data-question');
+                if (question) {
+                    inputField.value = question;
+                    handleUserMessage(question, messagesContainer, inputField);
+                }
+            });
         });
     }
     
