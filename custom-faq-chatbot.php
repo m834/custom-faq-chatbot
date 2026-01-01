@@ -38,6 +38,9 @@ class Custom_FAQ_Chatbot {
         // AJAX handler for saving unanswered questions
         add_action('wp_ajax_cfaq_save_unanswered', array($this, 'save_unanswered_question'));
         add_action('wp_ajax_nopriv_cfaq_save_unanswered', array($this, 'save_unanswered_question'));
+        
+        // Register notification shortcode
+        add_shortcode('admissions_notification', array($this, 'render_admissions_notification'));
     }
     
     /**
@@ -70,7 +73,15 @@ class Custom_FAQ_Chatbot {
             true
         );
         
-        // Localize script for AJAX
+        // Enqueue Notification Popup JS
+        wp_enqueue_script(
+            'cfaq-notification-popup-js',
+            CFAQ_PLUGIN_URL . 'assets/notification-popup.js',
+            array(),
+            CFAQ_VERSION,
+            true
+        );
+                // Localize script for AJAX
         wp_localize_script(
             'cfaq-chatbot-js',
             'cfaqAjax',
@@ -222,9 +233,15 @@ class Custom_FAQ_Chatbot {
      */
     public function render_popup_chatbot() {
         ?>
-        <!-- Popup Chat Button -->
-        <div id="cfaq-popup-button" class="cfaq-popup-button">
-            <img src="<?php echo CFAQ_PLUGIN_URL; ?>assets/icon.png" alt="Chat" width="24" height="24" />
+        <!-- Popup Chat Button with Pointing Message -->
+        <div class="cfaq-button-container">
+            <div class="cfaq-pointing-message">
+                <span>Need help? Click me! 👋</span>
+                <div class="cfaq-pointer-arrow"></div>
+            </div>
+            <div id="cfaq-popup-button" class="cfaq-popup-button">
+                <img src="<?php echo CFAQ_PLUGIN_URL; ?>assets/icon.png" alt="Chat" width="24" height="24" />
+            </div>
         </div>
         
         <!-- Popup Chat Window -->
@@ -278,6 +295,55 @@ class Custom_FAQ_Chatbot {
             </div>
         </div>
         <?php
+    }
+    
+    /**
+     * Render admissions notification popup via shortcode
+     */
+    public function render_admissions_notification($atts) {
+        ob_start();
+        ?>
+        <!-- Admissions Notification Popup -->
+        <div id="cfaq-notification-popup" class="cfaq-notification-popup">
+            <div class="cfaq-notification-overlay"></div>
+            <div class="cfaq-notification-content">
+                <button id="cfaq-notification-close" class="cfaq-notification-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                
+                <div class="cfaq-notification-header">
+                    <div class="cfaq-notification-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h2>Exciting Opportunity!</h2>
+                </div>
+                
+                <div class="cfaq-notification-body">
+                    <p>Join our amazing program and grow your skills. Applications are now open!</p>
+                    <div class="cfaq-highlights">
+                        <span class="cfaq-highlight">✓ Free Training</span>
+                        <span class="cfaq-highlight">✓ Certification</span>
+                        <span class="cfaq-highlight">✓ Job Placement</span>
+                    </div>
+                </div>
+                
+                <div class="cfaq-notification-footer">
+                    <button id="cfaq-notification-close-btn" class="cfaq-notification-btn cfaq-btn-secondary">
+                        Close
+                    </button>
+                    <button id="cfaq-notification-apply-btn" class="cfaq-notification-btn cfaq-btn-primary">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <?php
+        return ob_get_clean();
     }
 }
 
